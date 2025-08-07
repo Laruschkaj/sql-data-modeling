@@ -1,0 +1,39 @@
+Medical-Center-Schema
+
+Tables & Relationships:
+
+* doctors
+
+	*id (PRIMARY KEY)
+
+	*first_name, last_name
+
+*patients
+
+	*id (PRIMARY KEY)
+
+	*first_name, last_name
+
+*visits (Join Table)
+
+	*id (PRIMARY KEY)
+
+	*doctor_id (FOREIGN KEY to doctors)
+
+	*patient_id (FOREIGN KEY to patients)
+
+	*visit_date
+
+*diseases
+
+	*id (PRIMARY KEY)
+
+	*name
+
+	*diagnoses (Join Table)
+	
+	*id (PRIMARY KEY)
+
+	*visit_id (FOREIGN KEY to visits)
+
+	*disease_id (FOREIGN KEY to diseases)

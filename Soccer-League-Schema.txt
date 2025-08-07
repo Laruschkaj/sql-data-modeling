@@ -1,0 +1,53 @@
+Soccer-League-Schema
+
+Tables & Relationships:
+
+seasons
+
+	id (PRIMARY KEY)
+
+	start_date, end_date
+
+teams
+
+	id (PRIMARY KEY)
+
+	name
+
+players
+
+	id (PRIMARY KEY)
+
+	name
+
+	current_team_id (FOREIGN KEY to teams)
+
+matches
+
+	id (PRIMARY KEY)
+
+	home_team_id, away_team_id (FOREIGN KEYs to teams)
+
+	season_id (FOREIGN KEY to seasons)
+
+	match_date
+
+goals
+
+	id (PRIMARY KEY)
+
+	player_id (FOREIGN KEY to players)
+
+	match_id (FOREIGN KEY to matches)
+
+referees
+
+	id (PRIMARY KEY)
+
+	name
+
+match_referees (Join Table)
+
+	match_id (FOREIGN KEY to matches)
+
+	referee_id (FOREIGN KEY to referees)

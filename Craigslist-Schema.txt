@@ -1,0 +1,45 @@
+Craigslist-Schema
+
+Tables & Relationships:
+
+regions
+
+	id (PRIMARY KEY)
+
+	name
+
+users
+
+	id (PRIMARY KEY)
+
+	username
+
+	password
+
+	preferred_region_id (FOREIGN KEY to regions)
+
+posts
+
+	id (PRIMARY KEY)
+
+	title
+	
+	text
+
+	user_id (FOREIGN KEY to users)
+
+	location (e.g., street address or neighborhood)
+
+	region_id (FOREIGN KEY to regions)
+
+categories
+
+	id (PRIMARY KEY)
+
+	name
+
+post_categories (Join Table)
+
+	post_id (FOREIGN KEY to posts)
+
+	category_id (FOREIGN KEY to categories)
